@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Emailer Pro Suite by Badal - Official Visual Guide</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f7;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1d1d1f;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 12mm 15mm 10mm 15mm;
+      background: #ffffff;
+      margin: 0 auto;
+      position: relative;
+      page-break-after: always;
+      page-break-inside: avoid;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    /* Global Apple UI System */
+    .apple-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e5e5ea;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .app-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      overflow: hidden;
+    }
+
+    .app-icon img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #1d1d1f;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-text p {
+      margin: 2px 0 0 0;
+      font-size: 11.5px;
+      color: #86868b;
+      font-weight: 500;
+    }
+
+    .header-badges {
+      display: flex;
+      gap: 8px;
+    }
+
+    .apple-badge {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 980px;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-beta {
+      background: rgba(255, 149, 0, 0.12);
+      color: #b25000;
+      border: 1px solid rgba(255, 149, 0, 0.3);
+    }
+
+    .badge-local {
+      background: rgba(52, 199, 89, 0.12);
+      color: #1b7a37;
+      border: 1px solid rgba(52, 199, 89, 0.3);
+    }
+
+    .badge-blue {
+      background: rgba(0, 113, 227, 0.1);
+      color: #0071e3;
+      border: 1px solid rgba(0, 113, 227, 0.25);
+    }
+
+    /* Section Headings */
+    .section-eyebrow {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0071e3;
+      margin-bottom: 2px;
+    }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1d1d1f;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Beta Banner Callout */
+    .beta-callout-card {
+      background: linear-gradient(135deg, #fdfbfa 0%, #f6f5f8 100%);
+      border-radius: 13px;
+      border: 1px solid #ebdcd0;
+      padding: 12px 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .beta-callout-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ff9500;
+      box-shadow: 0 0 0 2.5px rgba(255, 149, 0, 0.25);
+    }
+
+    .beta-callout-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+      letter-spacing: -0.01em;
+    }
+
+    .beta-callout-body {
+      font-size: 11px;
+      color: #3a3a3c;
+      line-height: 1.45;
+      margin: 0 0 8px 0;
+    }
+
+    .tester-flow-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #1d1d1f;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 7px 12px;
+      border-radius: 8px;
+      border: 1px solid #e5e5ea;
+    }
+
+    .flow-step-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #ffffff;
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid #d2d2d7;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    /* Feature Pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+
+    .pillar-card {
+      background: #f5f5f7;
+      border-radius: 11px;
+      padding: 10px 12px;
+      border: 1px solid #ebebf0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .pillar-icon-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .pillar-icon {
+      font-size: 15px;
+    }
+
+    .pillar-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1d1d1f;
+    }
+
+    .pillar-desc {
+      font-size: 9.5px;
+      color: #6e6e73;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    /* 4-Step Cards */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 12px;
+      padding: 11px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.02);
+    }
+
+    .step-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #1d1d1f;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-timing {
+      font-size: 10px;
+      font-weight: 600;
+      color: #86868b;
+    }
+
+    .step-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin: 0 0 3px 0;
+      letter-spacing: -0.015em;
+    }
+
+    .step-instruction {
+      font-size: 10.5px;
+      color: #6e6e73;
+      margin: 0 0 7px 0;
+      line-height: 1.35;
+    }
+
+    .mockup-container {
+      background: #fbfbfd;
+      border: 1px solid #e8e8ed;
+      border-radius: 8px;
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Step Mockup Widgets */
+    .address-bar-mockup {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #d2d2d7;
+      border-radius: 6px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .address-url {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #0071e3;
+    }
+
+    .press-enter-badge {
+      margin-left: auto;
+      font-size: 9px;
+      font-weight: 700;
+      background: #ebebf0;
+      color: #6e6e73;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    .toggle-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+    }
+
+    .toggle-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+
+    .ios-toggle {
+      width: 40px;
+      height: 23px;
+      background: #34c759;
+      border-radius: 980px;
+      position: relative;
+      box-shadow: 0 1px 4px rgba(52, 199, 89, 0.4);
+    }
+
+    .ios-toggle-knob {
+      width: 19px;
+      height: 19px;
+      background: #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .btn-mockup-blue {
+      background: #0071e3;
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 7px rgba(0, 113, 227, 0.3);
+    }
+
+    .folder-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10.5px;
+      background: #ffffff;
+      border: 1px solid #d2d2d7;
+      padding: 5px 9px;
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    .folder-name {
+      font-family: ui-monospace, Menlo, monospace;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+
+    .pin-badge {
+      margin-left: auto;
+      background: rgba(0, 113, 227, 0.1);
+      color: #0071e3;
+      font-weight: 700;
+      font-size: 9.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    /* Chrome Browser Window Mockup (Page 1 Bottom) */
+    .chrome-window-mockup {
+      background: #ffffff;
+      border: 1px solid #d2d2d7;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+    }
+
+    .mac-titlebar {
+      background: #f6f6f6;
+      border-bottom: 1px solid #e1e1e1;
+      padding: 7px 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .traffic-lights {
+      display: flex;
+      gap: 6px;
+    }
+
+    .traffic-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; border: 1px solid #e0443e; }
+    .dot-yellow { background: #ffbd2e; border: 1px solid #dea123; }
+    .dot-green { background: #27c93f; border: 1px solid #1aab29; }
+
+    .chrome-url-bar {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #d2d2d7;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 10.5px;
+      color: #1d1d1f;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .chrome-extensions-view {
+      padding: 12px 16px;
+      background: #fbfbfd;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ext-top-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ebebf0;
+      padding-bottom: 9px;
+    }
+
+    .ext-buttons-left {
+      display: flex;
+      gap: 8px;
+    }
+
+    .chrome-pill-btn {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 5px;
+      border: 1px solid #d2d2d7;
+      background: #ffffff;
+      color: #1d1d1f;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .chrome-pill-btn.primary {
+      background: #0071e3;
+      color: #ffffff;
+      border-color: #0071e3;
+    }
+
+    .ext-card-preview {
+      background: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 11px;
+      padding: 11px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.03);
+    }
+
+    .ext-card-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ext-icon-small {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #1d1d1f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .ext-card-text h5 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+    }
+
+    .ext-card-text p {
+      margin: 2px 0 0 0;
+      font-size: 10.5px;
+      color: #86868b;
+    }
+
+    .ext-card-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ext-badge-green {
+      font-size: 10px;
+      font-weight: 700;
+      color: #34c759;
+      background: rgba(52, 199, 89, 0.1);
+      padding: 3px 9px;
+      border-radius: 5px;
+      border: 1px solid rgba(52, 199, 89, 0.25);
+    }
+
+    /* PAGE 2 STYLES */
+    .launcher-hero-card {
+      background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+    }
+
+    .launcher-info h3 {
+      margin: 0 0 3px 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .launcher-info p {
+      margin: 0;
+      font-size: 11.5px;
+      color: #a1a1a6;
+      line-height: 1.4;
+    }
+
+    .launcher-pill-mockup {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 980px;
+      padding: 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+      white-space: nowrap;
+    }
+
+    .lightning-icon {
+      color: #0071e3;
+      font-size: 14px;
+    }
+
+    /* Tab Workflow Cards Grid (2x2) */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .workflow-card {
+      background: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 13px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.02);
+    }
+
+    .tab-header-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-tag-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      border: 1px solid #e1e1e6;
+    }
+
+    .tab-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin: 0;
+    }
+
+    .tab-card-desc {
+      font-size: 10.5px;
+      color: #6e6e73;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    /* UI Previews inside Tabs */
+    .mini-csv-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #e5e5ea;
+    }
+
+    .mini-csv-table th {
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-weight: 600;
+      padding: 4px 7px;
+      text-align: left;
+      border-bottom: 1px solid #e5e5ea;
+    }
+
+    .mini-csv-table td {
+      padding: 4px 7px;
+      border-bottom: 1px solid #f2f2f7;
+      color: #424245;
+    }
+
+    .variable-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 6px 8px;
+      background: #f5f5f7;
+      border-radius: 7px;
+      border: 1px solid #e5e5ea;
+    }
+
+    .var-chip {
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 9px;
+      font-weight: 600;
+      background: #ffffff;
+      color: #0071e3;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 113, 227, 0.25);
+    }
+
+    .preview-box {
+      background: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 7px;
+      padding: 8px 10px;
+      font-size: 10px;
+      color: #1d1d1f;
+    }
+
+    .preview-subject {
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: #1d1d1f;
+      border-bottom: 1px solid #f2f2f7;
+      padding-bottom: 2px;
+    }
+
+    .preview-body {
+      color: #6e6e73;
+      line-height: 1.3;
+    }
+
+    .dispatch-mode-toggle {
+      display: flex;
+      gap: 7px;
+    }
+
+    .mode-pill {
+      flex: 1;
+      padding: 5px 8px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      border: 1px solid #d2d2d7;
+      background: #ffffff;
+      color: #1d1d1f;
+    }
+
+    .mode-pill.active {
+      background: #0071e3;
+      color: #ffffff;
+      border-color: #0071e3;
+    }
+
+    .dispatch-action-row {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .btn-test {
+      background: #f2f2f7;
+      border: 1px solid #d2d2d7;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+
+    .btn-send {
+      background: #34c759;
+      color: #ffffff;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 9.5px;
+      font-weight: 700;
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Gmail Complete Window Mockup (Page 2 Bottom) */
+    .gmail-window-mockup {
+      background: #ffffff;
+      border: 1px solid #d2d2d7;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+    }
+
+    .gmail-body-layout {
+      display: flex;
+      height: 155px;
+      background: #f6f8fc;
+      position: relative;
+    }
+
+    .gmail-sidebar {
+      width: 155px;
+      background: #f6f8fc;
+      border-right: 1px solid #e0e4eb;
+      padding: 12px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .gmail-compose-btn {
+      background: #c2e7ff;
+      color: #001d35;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      width: fit-content;
+    }
+
+    .gmail-nav-item {
+      font-size: 10px;
+      color: #444746;
+      padding: 4px 8px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .gmail-nav-item.active {
+      background: #d3e3fd;
+      color: #041e49;
+      font-weight: 700;
+    }
+
+    .gmail-inbox-content {
+      flex: 1;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      position: relative;
+    }
+
+    .fake-email-row {
+      background: #ffffff;
+      border: 1px solid #e0e4eb;
+      border-radius: 7px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 9.5px;
+    }
+
+    .fake-email-sender {
+      font-weight: 700;
+      color: #1d1d1f;
+      width: 125px;
+    }
+
+    .fake-email-subject {
+      color: #5f6368;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .floating-launcher-callout {
+      position: absolute;
+      bottom: 14px;
+      right: 16px;
+      background: #1d1d1f;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 980px;
+      font-size: 11.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
+      border: 1.5px solid #0071e3;
+    }
+
+    .floating-pointer-tooltip {
+      position: absolute;
+      bottom: 52px;
+      right: 16px;
+      background: #0071e3;
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 7px;
+      box-shadow: 0 2px 8px rgba(0, 113, 227, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .floating-pointer-tooltip::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      right: 28px;
+      border-width: 5px 5px 0;
+      border-style: solid;
+      border-color: #0071e3 transparent;
+      display: block;
+      width: 0;
+    }
+
+    /* PAGE 3 STYLES: DELIVERABILITY & FEEDBACK */
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .safety-card {
+      background: #fbfbfd;
+      border: 1px solid #e5e5ea;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .safety-icon {
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+
+    .safety-card h4 {
+      margin: 0;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1d1d1f;
+    }
+
+    .safety-card p {
+      margin: 0;
+      font-size: 10px;
+      color: #6e6e73;
+      line-height: 1.35;
+    }
+
+    /* Quota Comparison Table */
+    .quota-card {
+      background: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 13px;
+      padding: 12px 16px;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.02);
+    }
+
+    .quota-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .quota-header h4 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+    }
+
+    .quota-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      border-radius: 7px;
+      overflow: hidden;
+      border: 1px solid #e5e5ea;
+    }
+
+    .quota-table th {
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-weight: 700;
+      padding: 6px 10px;
+      text-align: left;
+      border-bottom: 1px solid #e5e5ea;
+    }
+
+    .quota-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #f2f2f7;
+      color: #3a3a3c;
+    }
+
+    /* CSV Guidelines Card */
+    .csv-guide-card {
+      background: #ffffff;
+      border: 1px solid #e5e5ea;
+      border-radius: 13px;
+      padding: 11px 16px;
+      box-shadow: 0 2px 7px rgba(0,0,0,0.02);
+    }
+
+    .csv-guide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .csv-guide-header h4 {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+    }
+
+    .csv-code-block {
+      background: #1d1d1f;
+      color: #f5f5f7;
+      padding: 8px 12px;
+      border-radius: 7px;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 9.5px;
+      line-height: 1.45;
+      overflow-x: auto;
+    }
+
+    /* Tester Checklist Card */
+    .checklist-card {
+      background: #ffffff;
+      border: 1px solid #e1e1e6;
+      border-radius: 13px;
+      padding: 12px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .checklist-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .checklist-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin: 0;
+    }
+
+    .checklist-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .check-item {
+      background: #f5f5f7;
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .check-box {
+      width: 15px;
+      height: 15px;
+      border-radius: 4px;
+      background: #34c759;
+      color: #ffffff;
+      font-size: 9.5px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-text-bold {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1d1d1f;
+      display: block;
+    }
+
+    .check-text-desc {
+      font-size: 9.5px;
+      color: #6e6e73;
+      line-height: 1.3;
+    }
+
+    /* Feedback Hub Apple Card */
+    .feedback-hero-card {
+      background: linear-gradient(135deg, #0071e3 0%, #0056b3 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 7px 24px rgba(0, 113, 227, 0.22);
+    }
+
+    .feedback-text h3 {
+      margin: 0 0 4px 0;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .feedback-text p {
+      margin: 0;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.94);
+      line-height: 1.4;
+      max-width: 460px;
+    }
+
+    .developer-pill {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      padding: 10px 16px;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .developer-pill .dev-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+    }
+
+    .developer-pill .dev-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #e5e5ea;
+      font-size: 10px;
+      color: #86868b;
+    }
+
+    .page-footer strong {
+      color: #1d1d1f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: OVERVIEW & 30-SEC CHROME INSTALLATION -->
+  <div class="page">
+    <div style="display:flex; flex-direction:column; gap:11px;">
+      <!-- Header -->
+      <div class="apple-header">
+        <div class="brand-box">
+          <div class="app-icon">
+            <img src="data:image/png;base64,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" alt="Icon">
+          </div>
+          <div class="brand-text">
+            <h1>Emailer Pro Suite <span style="font-size:13px; font-weight:500; color:#86868b;">by Badal</span></h1>
+            <p>High-End Local Mail Merge & Automated Delivery Engine for Gmail</p>
+          </div>
+        </div>
+        <div class="header-badges">
+          <span class="apple-badge badge-beta">● Active Development</span>
+          <span class="apple-badge badge-local">✓ 100% Client-Side</span>
+        </div>
+      </div>
+
+      <!-- Beta Phase Message Callout -->
+      <div class="beta-callout-card">
+        <div class="beta-callout-header">
+          <div class="pulse-dot"></div>
+          <span class="beta-callout-title">Development Phase — Early Tester Invitation & Feedback Request</span>
+        </div>
+        <p class="beta-callout-body">
+          <strong>Aapke liye ek personal request:</strong> Yeh extension abhi <strong>active development phase</strong> mein hai. Badal ne ise lightweight, privacy-focused aur 100% free Gmail mail merge solution banane ke liye design kiya hai. Please ise apne real-world workflows mein test karein — CSV upload, personalized preview, aur drafts save karke dekhein. Aapka genuine feedback aage ke updates shape karega!
+        </p>
+        <div class="tester-flow-row">
+          <span>Tester Workflow:</span>
+          <span class="flow-step-tag">1. Install in Chrome</span>
+          <span>➔</span>
+          <span class="flow-step-tag">2. Load CSV in Gmail</span>
+          <span>➔</span>
+          <span class="flow-step-tag">3. Save Drafts / Test Send</span>
+          <span>➔</span>
+          <span class="flow-step-tag" style="background:#0071e3; color:#fff; border-color:#0071e3;">4. Share Feedback with Badal</span>
+        </div>
+      </div>
+
+      <!-- 4 Pillars -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-row">
+            <span class="pillar-icon">🔒</span>
+            <span class="pillar-title">100% Private</span>
+          </div>
+          <p class="pillar-desc">No external servers. All CSV records & drafts stay local inside your browser.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-row">
+            <span class="pillar-icon">⚡</span>
+            <span class="pillar-title">Floating Console</span>
+          </div>
+          <p class="pillar-desc">Opens natively in Gmail bottom-right. Never closes accidentally or loses work.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-row">
+            <span class="pillar-icon">🏷️</span>
+            <span class="pillar-title">Dynamic Tags</span>
+          </div>
+          <p class="pillar-desc">Auto-detects any CSV column: &#123;&#123;Name&#125;&#125;, &#123;&#123;Email&#125;&#125;, &#123;&#123;Institution&#125;&#125;.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-row">
+            <span class="pillar-icon">🛡️</span>
+            <span class="pillar-title">Smart Throttle</span>
+          </div>
+          <p class="pillar-desc">Human-like 3-6s anti-spam delay protects your Gmail account reputation.</p>
+        </div>
+      </div>
+
+      <!-- Section Title -->
+      <div>
+        <div class="section-eyebrow">STEP-BY-STEP SETUP GUIDE</div>
+        <div class="section-title">
+          <span>How to Install in Google Chrome</span>
+          <span style="font-size:10.5px; font-weight:600; color:#86868b;">⏱️ Takes only 30 Seconds</span>
+        </div>
+      </div>
+
+      <!-- 4 Steps Visual Grid -->
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div>
+            <div class="step-badge-row">
+              <span class="step-number">1</span>
+              <span class="step-timing">Step 01</span>
+            </div>
+            <h4 class="step-title">Open Chrome Extensions</h4>
+            <p class="step-instruction">Google Chrome kholein aur address bar mein ye URL paste karke <strong>Enter</strong> press karein:</p>
+          </div>
+          <div class="mockup-container">
+            <div class="address-bar-mockup">
+              <span style="color:#34c759;font-size:11px;">🔒</span>
+              <span class="address-url">chrome://extensions</span>
+              <span class="press-enter-badge">ENTER ↵</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div>
+            <div class="step-badge-row">
+              <span class="step-number">2</span>
+              <span class="step-timing">Step 02</span>
+            </div>
+            <h4 class="step-title">Turn ON Developer Mode</h4>
+            <p class="step-instruction">Top-right corner mein dekhein aur <strong>Developer mode</strong> ka toggle switch turn <strong>ON</strong> karein:</p>
+          </div>
+          <div class="mockup-container">
+            <div class="toggle-row">
+              <span class="toggle-label">Developer mode</span>
+              <div class="ios-toggle">
+                <div class="ios-toggle-knob"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div>
+            <div class="step-badge-row">
+              <span class="step-number">3</span>
+              <span class="step-timing">Step 03</span>
+            </div>
+            <h4 class="step-title">Click "Load unpacked"</h4>
+            <p class="step-instruction">Top-left corner mein ek naya action bar aayega. <strong>Load unpacked</strong> button click karein:</p>
+          </div>
+          <div class="mockup-container">
+            <div class="btn-mockup-blue">
+              <span>📁</span>
+              <span>Load unpacked</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+          <div>
+            <div class="step-badge-row">
+              <span class="step-number">4</span>
+              <span class="step-timing">Step 04</span>
+            </div>
+            <h4 class="step-title">Select Folder & Pin</h4>
+            <p class="step-instruction">Folder dialog mein jaakar <strong>bulk-emailer-by-badal</strong> select karein aur toolbar pe pin karein:</p>
+          </div>
+          <div class="mockup-container">
+            <div class="folder-pill">
+              <span>📂</span>
+              <span class="folder-name">bulk-emailer-by-badal</span>
+              <span class="pin-badge">📌 PIN EXTENSION</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Chrome Window Mockup Graphic -->
+      <div class="chrome-window-mockup">
+        <div class="mac-titlebar">
+          <div class="traffic-lights">
+            <div class="traffic-dot dot-red"></div>
+            <div class="traffic-dot dot-yellow"></div>
+            <div class="traffic-dot dot-green"></div>
+          </div>
+          <div class="chrome-url-bar">
+            <span style="color:#34c759;font-size:11px;">🔒</span>
+            <span>chrome://extensions</span>
+          </div>
+        </div>
+        <div class="chrome-extensions-view">
+          <div class="ext-top-actions">
+            <div class="ext-buttons-left">
+              <span class="chrome-pill-btn primary">📁 Load unpacked</span>
+              <span class="chrome-pill-btn">Pack extension</span>
+              <span class="chrome-pill-btn">🔄 Update</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:10.5px; font-weight:600; color:#1d1d1f;">Developer mode</span>
+              <div class="ios-toggle" style="width:34px;height:19px;"><div class="ios-toggle-knob" style="width:15px;height:15px;top:2px;right:2px;"></div></div>
+            </div>
+          </div>
+          <div class="ext-card-preview">
+            <div class="ext-card-left">
+              <div class="ext-icon-small">⚡</div>
+              <div class="ext-card-text">
+                <h5>Emailer Pro Suite (by Badal) <span style="font-size:10.5px;color:#86868b;font-weight:normal;">v1.2.0</span></h5>
+                <p>Professional zero-friction HTML mail merge extension for Gmail with smart anti-spam throttling.</p>
+              </div>
+            </div>
+            <div class="ext-card-right">
+              <span class="ext-badge-green">● Active & Ready</span>
+              <div class="ios-toggle" style="width:34px;height:19px;"><div class="ios-toggle-knob" style="width:15px;height:15px;top:2px;right:2px;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <span><strong>Emailer Pro Suite</strong> • Created by Badal</span>
+      <span>Page 1 of 3 — Installation Walkthrough</span>
+    </div>
+  </div>
+
+  <!-- PAGE 2: COMPLETE GMAIL IN-TAB USAGE WORKFLOW -->
+  <div class="page">
+    <div style="display:flex; flex-direction:column; gap:11px;">
+      <!-- Header -->
+      <div class="apple-header">
+        <div class="brand-box">
+          <div class="app-icon" style="background:#0071e3;">
+            <svg viewBox="0 0 24 24" style="stroke:#ffffff;width:24px;height:24px;fill:none;stroke-width:2;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </div>
+          <div class="brand-text">
+            <h1>Gmail Workflow & Usage Guide</h1>
+            <p>From CSV Recipient Import to Live Merge & Dispatch</p>
+          </div>
+        </div>
+        <div class="header-badges">
+          <span class="apple-badge badge-blue">Native Gmail Tab</span>
+        </div>
+      </div>
+
+      <!-- Launcher Hero Callout -->
+      <div class="launcher-hero-card">
+        <div class="launcher-info">
+          <h3>Open mail.google.com in Chrome</h3>
+          <p>Gmail open karte hi bottom-right corner mein stylish floating launcher badge auto-appear hoga.<br>Ise click karte hi full mail merge console pop-up ho jayegi bina kisi separate window ya tab switch ke!</p>
+        </div>
+        <div class="launcher-pill-mockup">
+          <span class="lightning-icon">⚡</span>
+          <span>Badal Mailer Pro</span>
+        </div>
+      </div>
+
+      <!-- Section Title -->
+      <div>
+        <div class="section-eyebrow">THE 4 CONSOLE WORKFLOW TABS</div>
+        <div class="section-title">
+          <span>How to Compose & Send Bulk Personalized Emails</span>
+          <span style="font-size:10.5px; font-weight:600; color:#0071e3;">Zero Coding Required</span>
+        </div>
+      </div>
+
+      <!-- 4 Tabs Workflow Grid -->
+      <div class="workflow-grid">
+        <!-- Tab 1: Recipients -->
+        <div class="workflow-card">
+          <div class="tab-header-row">
+            <span class="tab-tag-badge">TAB 01</span>
+            <h4 class="tab-card-title">👥 Recipients Upload</h4>
+          </div>
+          <p class="tab-card-desc">Apni CSV file drag & drop karein ya directly <code>Name, Email</code> text paste karein. Columns auto-map ho jaate hain.</p>
+          <table class="mini-csv-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Institution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Prof. (Dr.) Anju Rani</td>
+                <td>anju.r@univ.edu</td>
+                <td>Graphic Era Univ</td>
+              </tr>
+              <tr>
+                <td>Prof. (Dr.) R. Sharma</td>
+                <td>rajesh.s@iit.edu</td>
+                <td>IIT Delhi</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="font-size:9.5px; color:#34c759; font-weight:700;">✓ Auto-detected 59 recipients & 4 dynamic headers</div>
+        </div>
+
+        <!-- Tab 2: Template Studio -->
+        <div class="workflow-card">
+          <div class="tab-header-row">
+            <span class="tab-tag-badge">TAB 02</span>
+            <h4 class="tab-card-title">✍️ Template Studio</h4>
+          </div>
+          <p class="tab-card-desc">Subject line aur body mein variables insert karein. Preloaded executive <strong>NSTC Mentor Invitation</strong> template ready milta hai.</p>
+          <div class="variable-chips-row">
+            <span style="font-size:9px; font-weight:700; color:#86868b; align-self:center;">Insert:</span>
+            <span class="var-chip">&#123;&#123;Name&#125;&#125;</span>
+            <span class="var-chip">&#123;&#123;Email&#125;&#125;</span>
+            <span class="var-chip">&#123;&#123;Institution&#125;&#125;</span>
+            <span class="var-chip">&#123;&#123;Research_Areas&#125;&#125;</span>
+          </div>
+          <div style="font-size:9.5px; background:#f5f5f7; border-radius:5px; padding:5px 8px; font-family:monospace; color:#1d1d1f; border:1px solid #e5e5ea;">
+            Subject: Invitation for &#123;&#123;Name&#125;&#125; - NSTC 2026
+          </div>
+        </div>
+
+        <!-- Tab 3: Live Preview -->
+        <div class="workflow-card">
+          <div class="tab-header-row">
+            <span class="tab-tag-badge">TAB 03</span>
+            <h4 class="tab-card-title">👁️ Live Recipient Preview</h4>
+          </div>
+          <p class="tab-card-desc">Bina send kiye har recipient ke liye email live kaisa dikhega carousel slider se check karein (e.g. 1 of 59).</p>
+          <div class="preview-box">
+            <div class="preview-subject">Invitation for Prof. (Dr.) Anju Rani - NSTC 2026</div>
+            <div class="preview-body">
+              Dear <strong>Prof. (Dr.) Anju Rani</strong>,<br>
+              We are honored to invite you representing <strong>Graphic Era Univ</strong> for our upcoming national initiative...
+            </div>
+          </div>
+          <div style="font-size:9.5px; color:#0071e3; font-weight:700;">‹ Recipient 1 of 59 › (Live in-browser merge)</div>
+        </div>
+
+        <!-- Tab 4: Dispatch Console -->
+        <div class="workflow-card">
+          <div class="tab-header-row">
+            <span class="tab-tag-badge">TAB 04</span>
+            <h4 class="tab-card-title">🚀 Dispatch Console</h4>
+          </div>
+          <p class="tab-card-desc">Pehle 1-click test mail bhejein apne inbox mein. Fir <strong>Auto-Send</strong> ya <strong>Save to Drafts</strong> select karein.</p>
+          <div class="dispatch-mode-toggle">
+            <div class="mode-pill active">⚡ Auto-Send (3-6s)</div>
+            <div class="mode-pill">📁 Save to Drafts</div>
+          </div>
+          <div class="dispatch-action-row">
+            <span class="btn-test">Send Test to Me</span>
+            <span class="btn-send">Start Mail Merge 🚀</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Gmail Window Mockup Graphic -->
+      <div class="gmail-window-mockup">
+        <div class="mac-titlebar">
+          <div class="traffic-lights">
+            <div class="traffic-dot dot-red"></div>
+            <div class="traffic-dot dot-yellow"></div>
+            <div class="traffic-dot dot-green"></div>
+          </div>
+          <div class="chrome-url-bar">
+            <span style="color:#34c759;font-size:11px;">🔒</span>
+            <span>https://mail.google.com/mail/u/0/#inbox</span>
+          </div>
+        </div>
+        <div class="gmail-body-layout">
+          <div class="gmail-sidebar">
+            <div class="gmail-compose-btn">
+              <span style="font-size:11.5px;">✏️</span>
+              <span>Compose</span>
+            </div>
+            <div class="gmail-nav-item active">
+              <span>📥 Inbox</span>
+              <span style="font-size:9.5px;font-weight:700;">12</span>
+            </div>
+            <div class="gmail-nav-item"><span>⭐ Starred</span></div>
+            <div class="gmail-nav-item"><span>📤 Sent</span></div>
+            <div class="gmail-nav-item"><span>📁 Drafts</span><span style="font-size:9.5px;font-weight:700;color:#0071e3;">59</span></div>
+          </div>
+          <div class="gmail-inbox-content">
+            <div class="fake-email-row">
+              <span class="fake-email-sender">Google Security</span>
+              <span class="fake-email-subject">Security alert for your linked Google account...</span>
+              <span style="font-size:9px;color:#86868b;">10:45 AM</span>
+            </div>
+            <div class="fake-email-row">
+              <span class="fake-email-sender">NSTC NanoSchool</span>
+              <span class="fake-email-subject">Upcoming National Mentor Workshop Schedule...</span>
+              <span style="font-size:9px;color:#86868b;">Yesterday</span>
+            </div>
+            <div class="fake-email-row">
+              <span class="fake-email-sender">IIT Delhi Research</span>
+              <span class="fake-email-subject">Conference Proceedings and Registration Details...</span>
+              <span style="font-size:9px;color:#86868b;">Nov 21</span>
+            </div>
+
+            <!-- Floating Launcher with Pointer Tooltip -->
+            <div class="floating-pointer-tooltip">
+              <span>👈 Click to launch console</span>
+            </div>
+            <div class="floating-launcher-callout">
+              <span style="color:#0071e3;">⚡</span>
+              <span>Badal Mailer Pro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <span><strong>Emailer Pro Suite</strong> • Created by Badal</span>
+      <span>Page 2 of 3 — Gmail In-Tab Workflow</span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: SAFETY, PRO TIPS & TESTER FEEDBACK HUB -->
+  <div class="page">
+    <div style="display:flex; flex-direction:column; gap:11px;">
+      <!-- Header -->
+      <div class="apple-header">
+        <div class="brand-box">
+          <div class="app-icon" style="background:#34c759;">
+            <svg viewBox="0 0 24 24" style="stroke:#ffffff;width:24px;height:24px;fill:none;stroke-width:2;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="brand-text">
+            <h1>Anti-Spam Safety & Tester Feedback Hub</h1>
+            <p>Best Practices for High Inbox Placement & Development Feedback</p>
+          </div>
+        </div>
+        <div class="header-badges">
+          <span class="apple-badge badge-local">Safe Delivery</span>
+        </div>
+      </div>
+
+      <!-- Deliverability Grid (3 Columns) -->
+      <div>
+        <div class="section-eyebrow">DELIVERABILITY BEST PRACTICES</div>
+        <div class="section-title">
+          <span>Built-In Anti-Spam Safety Protocols</span>
+        </div>
+      </div>
+
+      <div class="safety-grid">
+        <div class="safety-card">
+          <span class="safety-icon">⏱️</span>
+          <h4>3–6s Safety Throttling</h4>
+          <p>Har email ke beech random 3-6 second ka human delay lagta hai taaki Gmail spam automation flags trigger na kare.</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon">📥</span>
+          <h4>Save to Drafts First</h4>
+          <p>Badi recipient list (50+) ke liye pehle "Save to Drafts" mode use karein taaki Gmail mein pehle cross-check kar sakein.</p>
+        </div>
+        <div class="safety-card">
+          <span class="safety-icon">🎯</span>
+          <h4>1-Click Test Email</h4>
+          <p>Main mail merge se pehle hamesha "Send Test" button dabayein apne personal email par mobile & desktop layout dekhne ke liye.</p>
+        </div>
+      </div>
+
+      <!-- Gmail Daily Limits Table -->
+      <div class="quota-card">
+        <div class="quota-header">
+          <h4>📊 Gmail Sending Quotas & Recommended Batch Sizes</h4>
+          <span style="font-size:10px; color:#86868b; font-weight:600;">Official Google Guidelines</span>
+        </div>
+        <table class="quota-table">
+          <thead>
+            <tr>
+              <th>Account Type</th>
+              <th>Official Daily Limit</th>
+              <th>Recommended Safe Batch</th>
+              <th>Protection Mechanism</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Free Gmail</strong> (@gmail.com)</td>
+              <td>500 emails / day</td>
+              <td>50 – 100 emails / batch</td>
+              <td>3–6s randomized human-like delay</td>
+            </tr>
+            <tr>
+              <td><strong>Google Workspace</strong> (Custom domain)</td>
+              <td>2,000 emails / day</td>
+              <td>200 – 400 emails / batch</td>
+              <td>Full client-side session throttling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CSV Format Guidelines -->
+      <div class="csv-guide-card">
+        <div class="csv-guide-header">
+          <h4>📋 Standard CSV Format Quick Reference</h4>
+          <span style="font-size:10px;color:#86868b;font-weight:600;">UTF-8 Comma Separated</span>
+        </div>
+        <div class="csv-code-block">Name,Email,Institution,Research_Areas<br>"Prof. (Dr.) Anju Rani","anju.rani@example.edu","Graphic Era University","Environmental Microbiology"<br>"Prof. (Dr.) Rajesh Sharma","rajesh.s@example.edu","IIT Delhi","Applied Biotechnology"</div>
+      </div>
+
+      <!-- Beta Tester Review Checklist -->
+      <div class="checklist-card">
+        <div class="checklist-header">
+          <h4 class="checklist-title">📋 Early Tester Verification Checklist</h4>
+          <span style="font-size:10px; font-weight:600; color:#86868b;">Check off as you test</span>
+        </div>
+        <div class="checklist-items">
+          <div class="check-item">
+            <span class="check-box">✓</span>
+            <div>
+              <span class="check-text-bold">CSV Auto-Detection</span>
+              <span class="check-text-desc">Kya aapki custom CSV load hui aur columns detect hue?</span>
+            </div>
+          </div>
+          <div class="check-item">
+            <span class="check-box">✓</span>
+            <div>
+              <span class="check-text-bold">Live Preview Tags</span>
+              <span class="check-text-desc">Kya &#123;&#123;Name&#125;&#125; aur &#123;&#123;Institution&#125;&#125; real text se replace hue?</span>
+            </div>
+          </div>
+          <div class="check-item">
+            <span class="check-box">✓</span>
+            <div>
+              <span class="check-text-bold">Drafts Creation Speed</span>
+              <span class="check-text-desc">Kya Gmail Drafts folder mein saare personalized mails ban gaye?</span>
+            </div>
+          </div>
+          <div class="check-item">
+            <span class="check-box">✓</span>
+            <div>
+              <span class="check-text-bold">Floating Launcher UX</span>
+              <span class="check-text-desc">Gmail ke bottom-right mein floating badge smooth click ho raha hai?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Developer Feedback Callout -->
+      <div class="feedback-hero-card">
+        <div class="feedback-text">
+          <h3>Shape Version 2.0 with Your Feedback</h3>
+          <p>
+            Aapka har review, bug report, aur feature suggestion Badal ke liye bohot valuable hai. Agar koi issue aaye ya naye features (jaise email open tracking, CSV analytics, scheduling) chahiye, toh please direct Badal ko feedback dekar share karein!
+          </p>
+        </div>
+        <div class="developer-pill">
+          <div class="dev-label">Designed & Engineered By</div>
+          <div class="dev-name">Badal</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+      <span><strong>Emailer Pro Suite (by Badal)</strong> • v1.2.0 Beta Release</span>
+      <span>Page 3 of 3 — Deliverability & Feedback</span>
+    </div>
+  </div>
+
+</body>
+</html>
